@@ -1,0 +1,91 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    font-size: 24px;
+}
+
+.header {
+    display: inline-flex;
+    width: 100%;
+}
+
+.header.sign-in {
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.logo {
+    justify-content: flex-start;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+    border-color: black;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-right: 0px;
+    border-left: 0px;
+    border-style: solid;
+    margin: 5px;
+}
+
+h1 {
+    border: 1px solid black;
+}
+
+.author {
+    display: flex;
+    width: 100%;
+}
+
+.author.link {
+    justify-content: flex-end;
+}
+
+.author.link a {
+    margin: 0px 10px;
+    border: 1px solid black;
+}
+
+p {
+    margin: 0px 10px;
+}
+
+.information {
+    display: flex;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.information-text {
+    position: absolute;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer.logo {
+    width: 200%;
+}
+
+.footer.link {
+    justify-content: space-around;
+}
+
+.link,
+.link a {
+    text-decoration: none;
+}
