@@ -26,8 +26,17 @@ console.log(twoDimensionalProduct(arr2)); // 88
 */
 
 let twoDimensionalProduct = function(arr) {
-    // Your code here
+    return arr.reduce(function(accum, el) {
+      return accum * findRowProduct(el);
+    }, 1);
 };
+
+let findRowProduct = function(arr) {
+    return arr.reduce(function(accum, el) {
+      return accum * el;
+    }, 1);
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
