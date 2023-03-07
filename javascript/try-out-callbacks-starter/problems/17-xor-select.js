@@ -31,8 +31,19 @@ console.log(
 // [ 'art', 'app', 'buttery' ]
 *******************************************************************************/
 
-let xorSelect = function() {
+let xorSelect = function(array, cb1, cb2) {
+  let newArray = [];
 
+  array.forEach(function(el) {
+    /* if ((cb1(el) === true || cb2(el) === true) && !(cb1(el) === true && cb2(el) === true)) {
+      newArray.push(el);
+    } */
+    if ((cb1(el) || cb2(el)) && !(cb1(el) && cb2(el))) {
+      newArray.push(el);
+    }
+  });
+
+  return newArray;
 };
 
 
