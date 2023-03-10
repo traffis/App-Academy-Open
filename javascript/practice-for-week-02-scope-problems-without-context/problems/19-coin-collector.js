@@ -25,7 +25,15 @@ Example 3:
 
 ***********************************************************************/
 function coinCollector(numCoins) {
-  // Your code here
+  let collectedCoins = [];
+
+  let collectCoin = coin => {
+    collectedCoins.push(coin);
+
+    return collectedCoins;
+  }
+
+  return collectCoin;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
