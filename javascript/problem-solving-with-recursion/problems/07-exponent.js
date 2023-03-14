@@ -19,9 +19,22 @@ exponent(3, 2); // 9
 exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
-
+// 1 / (2 * exp(2, -2)) returns 1/ (2 * (1))
+//
+// 1 / (2 * exp(2, -1)) returns 1 / (2 * (1/2)) = 1/1
+//  
+// 1 / (2 * exp(2, 0)) returns 1 / (2 * 1) = 1/2
+//  return 1
 function exponent(b, n) {
-  // your code here
+  if (n === 0) {
+    return 1;
+  }
+
+  if (n > 0) {
+    return b * exponent(b, n - 1);
+  } else {
+    return (1 / b) * exponent(b, n + 1);
+  }
 }
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
