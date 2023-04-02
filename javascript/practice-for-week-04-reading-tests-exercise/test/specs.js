@@ -2,6 +2,7 @@ const chai = require("chai");
 const expect = chai.expect;
 const { isFive, isOdd, myRange } = require("../funcs");
 
+// checks if isFive num argument is 5 and returns true, otherwise return false
 describe("isFive(num)", () => {
   it("should return true if the num is 5 otherwise false", () => {
     const num1 = 5;
@@ -21,6 +22,9 @@ describe("isFive(num)", () => {
   });
 });
 
+// checks if isOdd number argument is odd and returns true
+// checks if isOdd number argument is even and returns false
+// checks if isOdd number argument is not a number and throws an error
 describe("isOdd(number)", () => {
   it("should return true if number is odd", () => {
     const num1 = 3;
@@ -61,6 +65,8 @@ describe("isOdd(number)", () => {
   });
 });
 
+// checks if myRange returns the correct array with step value of 1 if step is not provided
+// checks if myRange returns the correct array if a step is provided
 describe("myRange(min, max, step)", () => {
   context("if step is not provided", () => {
     it("should return the correct array with default value step=1", () => {
