@@ -1,5 +1,8 @@
+const {sayHelloTo} = require('./send-messages/say-hello-to');
+const {giveMessageToMrsPotato} = require('./send-messages/give-message-to-mrs-potato');
+const {message1, message2, message3} = require('./messages/index');
 
-// Your code here
+const [msg1, msg2, msg3] = [message1, message2, message3];
 
 /****************************************************************************/
 /******************* DO NOT EDIT CODE BELOW THIS LINE ***********************/
