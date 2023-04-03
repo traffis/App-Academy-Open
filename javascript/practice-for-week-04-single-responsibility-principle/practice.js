@@ -36,29 +36,50 @@ const recipes = {
 function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
   // Find the recipe for the pieType specified
   const recipe = recipes[pieType];
+
   // Bake the number of pies specified by the pieQuantity
+  bakePies(recipe, pieType, pieQuantity);
+
+  // Print the cost of each pie based on the cost of each ingredient
+  const costOfPie = calculateCostOfPie(recipe);
+  console.log(`Cost per pie: ${costOfPie}`);
+
+  // Calculate the total cost of all the pies
+  const totalCost = calculateTotalCost(costOfPie, pieQuantity);
+
+  // Print the total revenue calculated using the given profitMargin
+  const revenue = calculateTotalRevenue(totalCost, profitMargin);
+  console.log(`Sold ${pieQuantity} pies for $${revenue.toFixed(2)}!`);
+}
+
+function bakePies(recipe, pieType, pieQuantity) {
   for (let i = 0; i < pieQuantity; i++) {
     // Print the ingredients for each ingredient in the recipe
-    let combiningMsg = `Combining ingredients for ${pieType}: `
-    combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
-    console.log(combiningMsg);
+    printIngredients(recipe, pieType);
 
     // Print the nth pie that was baked
     console.log(`Baked pie ${i + 1}!`);
   }
+}
 
-  // Print the cost of each pie based on the cost of each ingredient
-  const costOfPie = recipe.reduce((prev, current) => {
+function printIngredients(recipe, pieType) {
+  let combiningMsg = `Combining ingredients for ${pieType}: `
+  combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
+  console.log(combiningMsg);
+}
+
+function calculateCostOfPie(recipe) {
+  return recipe.reduce((prev, current) => {
     return prev + current.cost;
   }, recipe[0].cost);
-  console.log(`Cost per pie: ${costOfPie}`);
+}
 
-  // Calculate the total cost of all the pies
-  const totalCost = costOfPie * pieQuantity;
+function calculateTotalCost(costOfPie, pieQuantity) {
+  return costOfPie * pieQuantity;
+}
 
-  // Print the total revenue calculated using the given profitMargin
-  const revenue = totalCost * (profitMargin || 1.2);
-  console.log(`Sold ${pieQuantity} pies for $${revenue.toFixed(2)}!`);
+function calculateTotalRevenue(totalCost, profitMargin) {
+  return totalCost * (profitMargin || 1.2);
 }
 
 /******************************* LOCAL TESTS *******************************/
