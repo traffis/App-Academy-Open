@@ -76,7 +76,6 @@ function promptInput(rl) {
 
     if (cmd === 'h') {
       console.log("\nHelp:\n");
-      
       printHelp();
     } else if (cmd === 'q') {
       rl.close();
@@ -87,7 +86,6 @@ function promptInput(rl) {
       processMove(cmd, cpu);
     } else {
       console.log("\nInvalid command.\n");
-
       printHelp();
     }
 
