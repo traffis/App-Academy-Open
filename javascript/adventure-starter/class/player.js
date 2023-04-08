@@ -1,3 +1,5 @@
+const { Food } = require('./food');
+
 class Player {
 
     constructor(name, startingRoom) {
@@ -32,24 +34,40 @@ class Player {
     }
 
     takeItem(itemName) {
+        const roomItems = this.currentRoom.items;
+        const playerItems = this.items;
+        const item = this.currentRoom.getItemByName(itemName);
+        const itemIdx = roomItems.findIndex(item => item.name === itemName);
 
-        // Fill this in
-
+        playerItems.push(item);
+        roomItems.splice(itemIdx, 1);
     }
 
     dropItem(itemName) {
+        const playerItems = this.items;
+        const roomItems = this.currentRoom.items;
+        const item = this.getItemByName(itemName);
+        const itemIdx = playerItems.findIndex(item => item.name === itemName);
 
-        // Fill this in
+        roomItems.push(item);
+        playerItems.splice(itemIdx, 1);
     }
 
     eatItem(itemName) {
-        // Fill this in
+        const item = this.getItemByName(itemName);
+        const playerItems = this.items;
 
+        if (item instanceof Food) {
+            const itemIdx = playerItems.findIndex(item => item.name === itemName);
+
+            playerItems.splice(itemIdx, 1);
+        } else {
+            console.log('You cannot eat a non-food item.');
+        }
     }
 
     getItemByName(name) {
-
-        // Fill this in
+        return this.items.find(item => item.name === name);
     }
 }
 
