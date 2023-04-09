@@ -1,19 +1,25 @@
 const {Character} = require('./character');
 
+const COOLDOWN_TIME = 3000;
 
 class Enemy extends Character {
   constructor(name, description, currentRoom) {
     super(name, description, currentRoom);
-    this.cooldown = 3000;
+    this.cooldown = COOLDOWN_TIME;
+    this.attackTarget = null;
   }
 
   setPlayer(player) {
     this.player = player;
   }
 
-
   randomMove() {
-    // Fill this in
+    const rooms = this.currentRoom.getExits();
+    const randomRoom = rooms[Math.floor(Math.random() * rooms.length)];
+    const newRoom = this.currentRoom.getRoomInDirection(randomRoom)
+
+    this.currentRoom = newRoom;
+    this.cooldown = COOLDOWN_TIME;
   }
 
   takeSandwich() {
@@ -30,20 +36,23 @@ class Enemy extends Character {
   rest() {
     // Wait until cooldown expires, then act
     const resetCooldown = function() {
+      this.cooldown = 0;
       this.act();
     };
-    setTimeout(resetCooldown, this.cooldown);
+    setTimeout(resetCooldown(), this.cooldown);
   }
 
   attack() {
-    // Fill this in
+    this.attackTarget.applyDamage(10);
+    this.cooldown = COOLDOWN_TIME;
+    console.log(`${this.name} attacks ${this.player.name} for 10 damange.`);
+    console.log(`${this.player.name} now has ${this.player.health} health.`);
   }
 
   applyDamage(amount) {
-    // Fill this in
+    super.applyDamage(amount);
+    this.attackTarget = this.player;
   }
-
-
 
   act() {
     if (this.health <= 0) {
@@ -57,7 +66,6 @@ class Enemy extends Character {
 
     // Fill this in
   }
-
 
   scratchNose() {
     this.cooldown += 1000;

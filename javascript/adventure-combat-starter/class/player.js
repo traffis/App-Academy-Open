@@ -34,33 +34,50 @@ class Player extends Character {
   }
 
   takeItem(itemName) {
+    const roomItems = this.currentRoom.items;
+    const playerItems = this.items;
+    const item = this.currentRoom.getItemByName(itemName);
+    const itemIdx = roomItems.findIndex(item => item.name === itemName);
 
-    // Fill this in
-
+    playerItems.push(item);
+    roomItems.splice(itemIdx, 1);
+    console.log(`${item.name} is now in your inventory.`);
   }
 
   dropItem(itemName) {
+    const playerItems = this.items;
+    const roomItems = this.currentRoom.items;
+    const item = this.getItemByName(itemName);
+    const itemIdx = playerItems.findIndex(item => item.name === itemName);
 
-    // Fill this in
-
+    roomItems.push(item);
+    playerItems.splice(itemIdx, 1);
+    console.log(`You dropped ${item.name} in ${this.currentRoom.name}.`);
   }
 
   eatItem(itemName) {
+    const item = this.getItemByName(itemName);
+    const playerItems = this.items;
 
-    // Fill this in
+    if (item instanceof Food) {
+        const itemIdx = playerItems.findIndex(item => item.name === itemName);
 
+        playerItems.splice(itemIdx, 1);
+        console.log(`You ate ${item.name}.`);
+    } else {
+        console.log('You cannot eat a non-food item.');
+    }
   }
 
   getItemByName(name) {
-
-    // Fill this in
-
+    return this.items.find(item => item.name === name);
   }
 
   hit(name) {
-
-    // Fill this in
-
+    const enemy = this.currentRoom.getEnemyByName(name);
+    enemy.applyDamage(10);
+    console.log(`${this.name} attacks ${enemy.name} for 10 damage.`);
+    console.log(`${enemy.name} now has ${enemy.health} health.`)
   }
 
   die() {
