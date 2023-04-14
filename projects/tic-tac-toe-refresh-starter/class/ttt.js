@@ -97,18 +97,18 @@ class TTT {
       }
     }
 
-    if (winner) return winner;
+    // backward diagonal check if there is no winner from forward check
+    if (!winner) {
+      for (let row = 0; row < grid.length; row++) {
+        let col = grid.length - row - 1;
+        winner = grid[row][col];
 
-    // backward diagonal check
-    for (let row = 0; row < grid.length; row++) {
-      let col = grid.length - row - 1;
-      winner = grid[row][col];
-
-      if (!(grid[row][col] === winner) || winner === ' ') {
-        winner = '';
-        break;
+        if (!(grid[row][col] === winner) || winner === ' ') {
+          winner = '';
+          break;
+        }
       }
-    }
+    };
 
     if (winner) return winner;
 
