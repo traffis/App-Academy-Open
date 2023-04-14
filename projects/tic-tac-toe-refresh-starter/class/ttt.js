@@ -17,15 +17,14 @@ class TTT {
     Screen.initialize(3, 3);
     Screen.setGridlines(true);
 
-    // Replace this with real commands
-    Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
+    // Screen commands
+    Screen.addCommand('up', 'move cursor up', this.cursor.up.bind(this.cursor));
+    Screen.addCommand('down', 'move cursor down', this.cursor.down.bind(this.cursor));
+    Screen.addCommand('left', 'move cursor left', this.cursor.left.bind(this.cursor));
+    Screen.addCommand('right', 'move cursor right', this.cursor.right.bind(this.cursor));
+    Screen.addCommand('space', 'place move', TTT.placeMove.bind(this));
 
     Screen.render();
-  }
-
-  // Remove this
-  static testCommand() {
-    console.log("TEST COMMAND");
   }
 
   static checkWin(grid) {
@@ -52,15 +51,13 @@ class TTT {
   }
 
   static horizontalWinCheck(grid) {
-    let winner = grid.find(row =>
+    const winner = grid.find(row =>
       row.every(cell => cell === row[0] && cell !== ' ')
     );
 
-    if (winner) {
-      return winner[0];
-    } else {
-      return false;
-    }
+    if (winner) return winner[0];
+
+    return false;
   }
 
   static verticalWinCheck(grid) {
@@ -85,10 +82,10 @@ class TTT {
   }
 
   static diagonalWinCheck(grid) {
-    let winner = '';
+    let winner;
 
     // forward diagonal check
-    for (let i = 0; i < grid.length; i++) {
+    for (let i = 1; i < grid.length; i++) {
       winner = grid[0][0];
 
       if (!(grid[i][i] === winner) || winner === ' ') {
@@ -99,9 +96,9 @@ class TTT {
 
     // backward diagonal check if there is no winner from forward check
     if (!winner) {
-      for (let row = 0; row < grid.length; row++) {
-        let col = grid.length - row - 1;
-        winner = grid[row][col];
+      for (let row = 1; row < grid.length; row++) {
+        const col = grid.length - row - 1;
+        winner = grid[0][grid[0].length - 1];
 
         if (!(grid[row][col] === winner) || winner === ' ') {
           winner = '';
@@ -113,6 +110,32 @@ class TTT {
     if (winner) return winner;
 
     return false;
+  }
+
+  static placeMove() {
+    const row = this.cursor.row;
+    const col = this.cursor.col;
+
+    if (Screen.grid[row][col] === ' ') {
+      Screen.setGrid(row, col, this.playerTurn);
+      Screen.render();
+
+      const winner = TTT.checkWin(Screen.grid);
+
+      if (winner) {
+        TTT.endGame(winner);
+      }
+
+      if (this.playerTurn === 'O') {
+        this.playerTurn = 'X';
+      } else {
+        this.playerTurn = 'O';
+      }
+    } else {
+      Screen.setMessage('This cell has already been taken. Choose another ' +
+        'cell.');
+      Screen.render();
+    }
   }
 
   static endGame(winner) {
