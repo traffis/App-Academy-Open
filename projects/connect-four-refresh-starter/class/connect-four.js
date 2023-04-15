@@ -93,7 +93,7 @@ class ConnectFour {
           winner = grid[row][col];
           count++;
 
-          for (let i = 1; i <=3; i++) {
+          for (let i = 1; i <= 3; i++) {
             if (winner === grid[row + i][col] && grid[row + i][col] !== ' ') {
               count++;
             } else {
