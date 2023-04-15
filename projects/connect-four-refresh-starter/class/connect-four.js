@@ -136,9 +136,6 @@ class ConnectFour {
 
           if (count === 4) {
             return winner;
-          } else {
-            winner = '';
-            count = 0;
           }
         }
       }
@@ -163,9 +160,6 @@ class ConnectFour {
 
           if (count === 4) {
             return winner;
-          } else {
-            winner = '';
-            count = 0;
           }
         }
       }
