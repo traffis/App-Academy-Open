@@ -24,6 +24,7 @@ class TTT {
     Screen.addCommand('right', 'move cursor right', this.cursor.right.bind(this.cursor));
     Screen.addCommand('space', 'place move', TTT.placeMove.bind(this));
 
+    this.cursor.setBackgroundColor();
     Screen.render();
   }
 
@@ -113,6 +114,7 @@ class TTT {
   }
 
   static placeMove() {
+    Screen.setMessage('');
     const row = this.cursor.row;
     const col = this.cursor.col;
 
