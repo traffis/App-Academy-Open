@@ -56,10 +56,6 @@ describe('Person class', function() {
       context('invalid inputs', function() {
         it('should throw a TypeError if obj is not an object', function() {
           expect(() => john.update(0)).to.throw(TypeError);
-          /* expect(() => john.update('jon')).to.throw(TypeError);
-          expect(() => john.update(null)).to.throw(TypeError);
-          expect(() => john.update(undefined)).to.throw(TypeError);
-          expect(() => john.update()).to.throw(TypeError); */
         });
 
         it('should throw a TypeError if the passed in object does not have a name ' +
