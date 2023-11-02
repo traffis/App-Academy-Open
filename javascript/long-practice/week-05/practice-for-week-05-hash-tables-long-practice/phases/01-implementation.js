@@ -102,18 +102,12 @@ class HashTable { // get O(1), set O(1), deleteKey O(1)
       return "Key not found"
     }
 
-    if (currentNode.key === key && currentNode.next === null) {
-      this.data[hash] = null;
+    if (currentNode.key === key) {
+      this.data[hash] = currentNode.next;
       this.count--;
     } else {
       let prevNode = currentNode;
       currentNode = currentNode.next;
-
-      if (prevNode.key === key) {
-        this.data[hash] = currentNode;
-        this.count--;
-        return prevNode;
-      }
 
       while (currentNode) {
         if (currentNode.key === key) {
