@@ -9,16 +9,9 @@ function mergeSort(arr) {
   }
 
   // Divide the array in half
-  let left = [];
-  let right = [];
-
-  if (arr.length % 2 === 0) {
-    left = arr.slice(0, arr.length / 2);
-    right = arr.slice(arr.length / 2);
-  } else {
-    left = arr.slice(0, Math.floor(arr.length / 2));
-    right = arr.slice(Math.floor(arr.length / 2));
-  }
+  let mid = arr.length % 2 === 0 ? arr.length / 2 : Math.floor(arr.length / 2);
+  let left = arr.slice(0, mid);
+  let right = arr.slice(mid);
 
   // Recursively sort the left half
   let leftSort = mergeSort(left);
@@ -49,7 +42,7 @@ function merge(arrA, arrB) {
     if (arrA[pointerA] < arrB[pointerB] || arrB[pointerB] === undefined) {
       arr.push(arrA[pointerA]);
       pointerA++;
-    } else if (arrB[pointerB] < arrA[pointerA] || arrA[pointerA] === undefined) {
+    } else {
       arr.push(arrB[pointerB]);
       pointerB++;
     }
