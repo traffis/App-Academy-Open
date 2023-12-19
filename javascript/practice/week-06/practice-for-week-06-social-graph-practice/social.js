@@ -54,12 +54,14 @@ class SocialNetwork {
         visited.add(currentUser);
 
         for (const user of this.follows[currentUser]) {
+          const nextPath = path.concat(user);
+
           if (!this.follows[userID].has(user) && !visited.has(user)) {
-            if (path.concat(user).length > 1 && path.concat(user).length <= degrees + 2) {
+            if (nextPath.length > 1 && nextPath.length <= degrees + 2) {
               recommendedFollows.push(user);
             }
           }
-          queue.push(path.concat(user));
+          queue.push(nextPath);
         }
       }
     }
