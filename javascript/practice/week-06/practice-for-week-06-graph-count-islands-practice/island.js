@@ -1,24 +1,54 @@
 function getNeighbors(row, col, matrix) {
-  
+  const neighbors = [];
+
   // Check top
+  if (row - 1 >= 0 && matrix[row - 1][col] === 1)
+    neighbors.push([row - 1, col]);
+
   // Check top right
+  if (row - 1 >= 0
+      && col + 1 < matrix[row].length
+      && matrix[row - 1][col + 1] === 1)
+    neighbors.push([row - 1, col + 1]);
+
   // Check right
+  if (col + 1 < matrix[row].length && matrix[row][col + 1] === 1)
+    neighbors.push([row, col + 1]);
+
   // Check bottom right
+  if (col + 1 < matrix[row].length
+      && row + 1 < matrix.length
+      && matrix[row + 1][col + 1] === 1)
+    neighbors.push([row + 1, col + 1]);
+
   // Check bottom
+  if (row + 1 < matrix.length && matrix[row + 1][col] === 1)
+    neighbors.push([row + 1, col]);
+
   // Check bottom left
+  if (row + 1 < matrix.length
+      && col - 1 >= 0
+      && matrix[row + 1][col - 1] === 1)
+    neighbors.push([row + 1, col - 1]);
+
   // Check left
+  if (col - 1 >= 0 && matrix[row][col - 1] === 1)
+    neighbors.push([row, col - 1]);
+
   // Check top left
-  // Return neighbors
-  
-  // Your code here
+  if (col - 1 >= 0
+      && row - 1 >= 0
+      && matrix[row - 1][col - 1] === 1)
+    neighbors.push([row - 1, col - 1]);
+
+  return neighbors;
 }
 
 function countIslands(matrix) {
-  
   // Create a visited set to store visited nodes
   // Initialize count to 0
   // Iterate through all indices in matrix
-    // If an index contains a 1 and has not been visited, 
+    // If an index contains a 1 and has not been visited,
     // increment island count and start traversing neighbors
       // DO THE THING (increment island count by 1)
       // Initialize a stack with current index
@@ -31,8 +61,37 @@ function countIslands(matrix) {
             // Add neighbor to stack
             // Mark neighbor as visited
   // Return island count
-  
-  // Your code here
+
+  const visited = new Set();
+  let count = 0;
+
+  for (let row = 0; row < matrix.length; row++) {
+    for (let col = 0; col < matrix[row].length; col++) {
+      if (matrix[row][col] === 1 && !visited.has(`${row},${col}`)) {
+        count++;
+
+        const stack = [[row, col]];
+        visited.add(`${row}.${col}`);
+
+        while (stack.length > 0) {
+          const currentNode = stack.pop();
+          const currentNodeRow = currentNode[0];
+          const currentNodeCol = currentNode[1];
+
+          getNeighbors(currentNodeRow, currentNodeCol, matrix).forEach(neighbor => {
+            const neighborRow = neighbor[0];
+            const neighborCol = neighbor[1];
+
+            if (!visited.has(`${neighborRow},${neighborCol}`)) {
+              visited.add(`${neighborRow},${neighborCol}`);
+              stack.push(neighbor);
+            }
+          });
+        }
+      }
+    }
+  }
+  return count;
 }
 
 // Uncomment the lines below for local testing
