@@ -1,37 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Doodle+Shadow&display=swap');
+
 h1 {
-    font-size: ;
-    font-family: ;
-    padding: ;
-    margin: ;
-    font-weight: ;
-    text-decoration: ;
-    color: ;
-    background-color: ;
+    font-size: 4em;
+    font-family: 'Rubik Doodle Shadow', sans-serif, monospace;
+    padding: 0;
+    margin: auto;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    text-align: center;
 }
 
 h2 {
-    font-size: ;
-    font-family: ;
-    padding: ;
-    margin: ;
-    font-weight: ;
-    color: ;
-    background-color: ;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif, monospace;
+    padding: 0;
+    margin: 16px auto;
+    font-weight: 700;
+    color: black;
+    background-color: white;
+    text-align: justify;
+    max-width: 50%;
 }
 
 p {
-    font-family: ;
-    font-size: ;
-    padding: ;
-    margin: ;
-    color: ;
-    background-color: ;
+    font-family: 'Roboto', sans-serif, monospace;
+    font-size: 1em;
+    padding: 0;
+    margin: 1em auto;
+    color: black;
+    background-color: white;
+    max-width: 50%;
 }
 
 .logo {
     background-size: cover;
-    background-image: url();
-    background-color: ;
-    height: ;
-    width: ;
+    background-image: url(https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png);
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    margin: auto;
 }
