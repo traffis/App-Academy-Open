@@ -31,3 +31,113 @@ p.more {
 }
 
 /* Your code here */
+* {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  background-color: #F5F5F5;
+  color: #464646;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #800080;
+}
+
+a:hover {
+  color: #800080;
+  font-weight: 700;
+}
+
+a > span:hover {
+  color: #800080;
+  font-weight: 700;
+}
+
+ul {
+  padding: 0;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.page-container {
+  max-width: 1200px;
+}
+
+#leftbar,
+#center,
+#rightbar {
+  float: left;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+#center {
+  width: 50%;
+  border: 1px solid #464646;
+  border-radius: 10px;
+}
+
+#center > div {
+  float: left;
+  width: 33%;
+}
+
+#topban h2 {
+  text-align: center;
+}
+
+footer {
+  clear: both;
+}
+
+ul.clfooter {
+  text-align: center;
+  border-top: 1px solid gray;
+  padding: 10px 0;
+}
+
+ul.clfooter > li {
+  display: inline;
+  padding-right: 5px;
+}
+
+h4.ban::before {
+  content: '☮️ ';
+  width: 15px;
+  height: 15px;
+}
+
+table.cal {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #333;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+td > a {
+  color: green;
+  font-weight: bold;
+}
+
+td[class=""]:hover {
+  background-color: lavender;
+}
+
+td.past {
+  cursor: not-allowed;
+}
+
+td.today {
+  background-color: darkviolet;
+}
+
+input#query:focus {
+  background-color: lightyellow;
+}
