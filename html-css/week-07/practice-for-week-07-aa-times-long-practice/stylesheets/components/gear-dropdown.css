@@ -1,3 +1,7 @@
+.pref-dropdown {
+  position: relative;
+}
+
 .pref {
   background-color: white;
   border: 1px solid #efefef;
@@ -6,11 +10,11 @@
   font-size: 12px;
   padding: 0.5em;
   position: absolute;
-  right: 5px;
-  top: 2.5em;
+  right: 0;
+  top: 1.5em;
   width: 200px;
+  z-index: 1;
 }
-
 
 .pref__section {
   border-top: 1px solid #dedede;
@@ -34,4 +38,9 @@
 
 .pref__section-link:hover {
   background-color: #dedede;
+  cursor: pointer;
+}
+
+.pref--hidden {
+  display: none;
 }

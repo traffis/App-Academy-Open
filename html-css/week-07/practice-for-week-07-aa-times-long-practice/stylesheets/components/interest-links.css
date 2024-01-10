@@ -1,1 +1,57 @@
-/* Your code here */
+.interests-bar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 2fr 1fr 0.75fr;
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.interests-bar__img,
+.interests-bar__weather-icon {
+  padding: 0 5px;
+}
+
+.interests-bar__text {
+  align-self: flex-start;
+  border-right: 1px solid #e2e2e2;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.interests-bar__story-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.interests-bar__stocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 0 10px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.stock {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.stock.last-stock {
+  border: unset;
+}
+
+.stock .stock-price {
+  font-weight: bold;
+  color: green;
+  text-align: right;;
+}
+
+.interests-bar__weather-temp {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}

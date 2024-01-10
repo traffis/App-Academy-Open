@@ -1,10 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
   console.log('event-handling.js script was successfully loaded');
-  const cogIcon = document.querySelector('.fas.fa-cog');
+  const cogIcon = document.querySelector('.masthead__icons#pref');
   cogIcon.addEventListener('click', event => {
     console.log('Gear clicked');
     event.stopPropagation();
-    document.querySelector('.pref').classList.remove('pref--hidden');
+    document.querySelector('.pref').classList.toggle('pref--hidden');
   });
 
   window.addEventListener('click', () => {
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.pref').classList.add('pref--hidden');
   });
 
-  const searchIcon = document.querySelector('.fa.fa-search');
+  const searchIcon = document.querySelector('.masthead__icons#search');
   searchIcon.addEventListener('click', () => {
     console.log('Search clicked');
     const modal = document.querySelector('.search-modal');
