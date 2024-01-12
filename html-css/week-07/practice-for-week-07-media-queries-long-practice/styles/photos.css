@@ -23,4 +23,81 @@
     text-align: center;
 }
 
-/* Your code here */
+@media (min-width: 600px) and (max-width: 900px) {
+    .photo-card {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .photo-card .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .photo-card .content img {
+        height: 100%;
+    }
+
+    .photo-card .content p {
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .photo-card {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 40%;
+    }
+
+    .photo-card h3 {
+        margin: 20px auto;
+    }
+    .photo-card a {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    .photo-card {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 40%;
+    }
+
+    .photo-card .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .photo-card .content img {
+        height: 100%;
+    }
+
+    .photo-card .content p {
+        margin-left: 10px;
+    }
+}
+
+@media print {
+    .photo-card {
+        break-inside: avoid;
+    }
+
+    .photo-card .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .photo-card .content img {
+        height: 100%;
+    }
+
+    .photo-card .content p {
+        margin-left: 10px;
+    }
+
+    .photo-card a {
+        display: none;
+    }
+}

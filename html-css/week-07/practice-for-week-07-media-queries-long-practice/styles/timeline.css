@@ -84,4 +84,8 @@
     flex: 1 1 2%;
 }
 
-/* Your code here */
+@media print {
+    body {
+        zoom: 50%;
+    }
+}

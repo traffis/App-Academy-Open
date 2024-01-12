@@ -52,4 +52,30 @@ nav a.selected {
     cursor: default;
 }
 
-/* Your code here */
+@media print {
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 639px) {
+    header.homepage {
+        height: 220px;
+    }
+}
+
+@media (max-width: 992px) {
+    a {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 993px) {
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
