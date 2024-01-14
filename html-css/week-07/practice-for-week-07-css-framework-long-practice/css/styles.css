@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  justify-content: space-between;
+}
+
+.nav .btn.nav-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.nav .btn.nav-btn .badge {
+  border-radius: 2px;
+}
