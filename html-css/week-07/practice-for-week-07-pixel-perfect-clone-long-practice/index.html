@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Wufoo Clone</title>
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./img/logo.png" alt="Wufoo clone logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="">FEATURES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                TEMPLATES
+              </a>
+              <ul class="dropdown-menu bg-body-tertiary">
+                <li><a class="dropdown-item" href="#">All Templates</a></li>
+                <li><a class="dropdown-item" href="#">Forms</a></li>
+                <li><a class="dropdown-item" href="#">Registration</a></li>
+                <li><a class="dropdown-item" href="#">Surveys</a></li>
+                <li><a class="dropdown-item" href="#">Tracking</a></li>
+                <li><a class="dropdown-item" href="#">Online Orders</a></li>
+                <li><a class="dropdown-item" href="#">Lead Generation</a></li>
+                <li><a class="dropdown-item" href="#">Invitations</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">DEMO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">PRICING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">INTEGRATIONS</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                RESOURCES
+              </a>
+              <ul class="dropdown-menu bg-body-tertiary">
+                <li><a class="dropdown-item" href="#">Guides</a></li>
+                <li><a class="dropdown-item" href="#">Why Wufoo</a></li>
+                <li><a class="dropdown-item" href="#">Examples</a></li>
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Help Center</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid justify-content-end nav-btns">
+        <button type="button" class="btn btn-primary">SIGN UP</button>
+        <button type="button" class="btn" id="login-btn"></button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="header__banner col-6 mt-5">
+          <h1 class="display-5">
+            Easy-to-Use Online Form Builder For Every Organization
+          </h1>
+          <p class="fs-5">
+            Cloud-based form builder that makes it easy to create
+            registration forms, application forms, surveys, contact forms,
+            payment forms and more.
+          </p>
+          <div class="header__banner-btns mt-5">
+            <button type="button" class="btn btn-primary btn-lg">SIGN UP FREE</button>
+            <button type="button" class="btn btn-warning btn-lg">LIVE DEMO</button>
+          </div>
+          <p class="fs-6 mt-4">
+            Getting started is FREE! We offer different plan options depending
+            on your needs, including an always-free plan. Check out our
+            <a href="#" class="link-secondary link-offset-2 link-underline-opacity-25
+            link-underline-opacity-100-hover">pricing page</a> for more details.
+          </p>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-items-center embed-responsive">
+          <iframe class="embed-responsive-item shadow p-1 mb-5 bg-body-tertiary rounded"
+            width="490" height="276" src="https://www.youtube.com/embed/gt9k6jggKJg"
+            title="Wufoo - Online Forms Made Simple" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+            picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container trusted-clients">
+      <h2 class="h3 text-center mb-3">
+        Trusted by 3+ million users and some of the world's most popular brands.
+      </h2>
+      <img src="./img/client-strip-grayscale.png" alt="Clients" class="img-fluid">
+      <hr>
+    </section>
+    <section class="container mt-5 d-flex flex-column align-items-center">
+      <img class="w-50 mb-5" src="./img/wufoo-online-form-builder.png" alt="Form builder image">
+      <h2 class="fs-4 w-50 mb-3 text-center text-body-secondary">
+        Build powerful online forms and customize them to your heart's delight.
+      </h2>
+      <p class="w-50 text-center text-body-secondary">
+        Our form builder gives you an award-winning interface, easy customization,
+        galleries, templates and reporting. Check out some of our popular
+        <a class="text-decoration-none" href="#">features</a>.
+      </p>
+    </section>
+    <section class="bg-body-tertiary mt-5 p-4">
+      <h2 class="text-center">But don't take our word for it...</h2>
+      <div id="carouselAutoplaying" class="container carousel slide p-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <figure class="d-flex">
+              <blockquote class="blockquote col-8 p-4 pt-0">
+                <p class="text-body-tertiary">
+                  "Wufoo is very easy to use. I've been able to give members of my
+                  team accounts with minimal explanation about how to use it and
+                  they've done very well creating and embedding forms without
+                  needing technical help."
+                </p>
+              </blockquote>
+              <figcaption class="p-4 pb-0 border-start">
+                <ul class="list-unstyled text-primary-emphasis">
+                  <li class="fw-bold">April Taulbee</li>
+                  <li>Webmaster</li>
+                  <li>D'Youville College, Buffalo</li>
+                  <img src="./img/testimony-1.png" alt="D'Youville College logo">
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="carousel-item">
+            <figure class="d-flex">
+              <blockquote class="blockquote col-8 p-4 pt-0">
+                <p class="text-body-tertiary">
+                  "Wufoo has the flexibility to create the exact form you need
+                  quickly, easily and have that form immediately integrate with
+                  the existing framework."
+                </p>
+              </blockquote>
+              <figcaption class="p-4 pb-0 border-start">
+                <ul class="list-unstyled text-primary-emphasis">
+                  <li class="fw-bold">Daniel Holloway</li>
+                  <li>Marketing Manager</li>
+                  <li>Non-Profit</li>
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="carousel-item">
+            <figure class="d-flex">
+              <blockquote class="blockquote col-8 p-4 pt-0">
+                <p class="text-body-tertiary">
+                  "I love Wufoo's ability to easily share with clients, gather
+                  their information, and retain that information for future
+                  reference."
+                </p>
+              </blockquote>
+              <figcaption class="p-4 pb-0 border-start">
+                <ul class="list-unstyled text-primary-emphasis">
+                  <li class="fw-bold">Jen Teske</li>
+                  <li>Real Estate Broker</li>
+                  <li>Re/Max Alliance - The Jen & Jean Team</li>
+                  <img src="./img/testimony-3.png" alt="Re/Max logo">
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="carousel-control-btns">
+          <button class="carousel-control-prev text-bg-secondary h-25 my-auto"
+            type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next text-bg-secondary h-25 my-auto"
+            type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="get-started bg-info text-white d-flex">
+      <div class="container d-flex">
+        <div class="col-3 d-flex flex-column justify-content-between">
+          <img src="./img/dino6.svg" alt="" class="img-fluid align-self-start">
+          <img src="./img/cloud-08.svg" alt="" height="100px" width="100px"
+            class="img-fluid cloud-img align-self-end">
+        </div>
+        <div class="col-6 d-flex flex-column justify-content-center
+          align-items-center text-center">
+          <h2 class="fs-1">Ready to Get Started?</h2>
+          <p class="fs-5">Sign up for a FREE account and build up to 5 forms for free.</p>
+          <button type="button" class="btn w-25 text-white">SIGN UP NOW</button>
+        </div>
+        <div class="col-3 d-flex flex-column">
+          <img src="./img/cloud-08.svg" alt="" height="100px" width="100px"
+            class="img-fluid cloud-img align-self-end">
+          <img src="./img/dino8.svg" alt="" class="img-fluid dino-right align-self-end">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container pt-5">
+      <nav class="nav navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="mb-2">
+            <a href="#" class="h5 fw-bold link-dark link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Industry Solutions
+            </a>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Education
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Nonprofit
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Event Management
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="mb-2">
+            <a href="#" class="h5 fw-bold link-dark link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Helpful Guides
+            </a>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                3 Form No-ons
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0
+                link-underline-opacity-100-hover">
+                CSS Customization
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Custom Radio Buttons & Checkboxes
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Customized Form Close Message
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+               link-underline-opacity-0 link-underline-opacity-100-hover">
+               Exporting Data Tip
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Forms in 2 Minutes
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Sending File Attachments
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Single & Double Opt-In Forms
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="mb-2">
+            <a href="#" class="h5 fw-bold link-dark link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Accept Payments
+            </a>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Stripe
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Square
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Authorize.Net
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Braintree
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Chargify
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Freshbooks
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                PayPal
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                USAePay
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="mb-2">
+            <a href="#" class="h5 fw-bold link-dark link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Featured Integrations
+            </a>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Asana
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Mailchimp
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Salesforce
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Dropbox
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                WordPress
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                DocuSign
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="mb-2">
+            <a href="#" class="h5 fw-bold link-dark link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Insightful Links
+            </a>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Web Forms
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Mobile Forms
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                HTML5 Forms
+              </a>
+            </li>
+            <li class="py-1">
+              <a href="#" class="link-secondary link-offset-2
+                link-underline-opacity-0 link-underline-opacity-100-hover">
+                Wufoo vs. Google Forms
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container mt-5 community-about-lang">
+      <nav class="nav navbar-expand-lg">
+        <div>
+          <div class="d-flex">
+            <a href="#" class="col-1 fw-bold link-secondary link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Community:
+            </a>
+            <ul class="list-unstyled d-flex ps-3">
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Twitter
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Facebook
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  LinkedIn
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Instagram
+                </a>
+              </li>
+              <li class="px-1 last-link">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex">
+            <a href="#" class="col-1 fw-bold link-secondary link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              About Us:
+            </a>
+            <ul class="list-unstyled d-flex flex-wrap ps-3">
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Status
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Sitemap
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Help & Docs
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Release Notes
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Privacy
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  California Privacy Notice
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Terms of Service
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Cookie Policy
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Do not sell or share my personal information
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Report Abuse
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  SurveyMonkey
+                </a>
+              </li>
+              <li class="px-1">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Careers
+                </a>
+              </li>
+              <li class="px-1 last-link">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  Affiliate Program
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex">
+            <a href="#" class="col-1 fw-bold link-secondary link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Language:
+            </a>
+            <ul class="list-unstyled d-flex ps-3">
+              <li class="px-1 last-link">
+                <a href="#" class="link-secondary link-offset-2
+                  link-underline-opacity-0 link-underline-opacity-100-hover">
+                  English
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <hr class="container">
+
+    <div class="container copyright py-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="text-secondary">Copyright © 2006 - 2024 •
+          <span>
+            <a href="#" class="link-secondary link-offset-2
+              link-underline-opacity-0 link-underline-opacity-100-hover">
+              Momentive Inc.
+            </a>
+          </span>
+        </p>
+        <img src="./img/bb-cert.png" alt="BBB Logo">
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

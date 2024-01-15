@@ -1,0 +1,80 @@
+a.nav-link:hover,
+.dropdown-item:hover {
+  color: #ff6900;
+}
+
+.btn {
+  border-radius: 2px;
+}
+
+.nav-btns button {
+  width: 6rem;
+}
+
+#login-btn::after {
+  content: "LOGIN";
+}
+
+#login-btn:hover::after {
+  content: "RAWRR!";
+}
+
+main {
+  margin-top: 10rem;
+}
+
+.trusted-clients img {
+  margin-bottom: 6rem;
+}
+
+.container.carousel {
+  height: 18rem;
+}
+
+.carousel-control-btns button {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(108, 117, 125, 1);
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.5;
+}
+
+.get-started .btn {
+  background-color: #25d670;
+  border-color: #6af26e;
+}
+
+.get-started .btn:hover {
+  background-color: #2be778;
+  color: #fff;
+}
+
+.get-started .btn:active {
+  background-color: #2be778;
+  border-color: #6af26e;
+}
+
+.dino-right {
+  position: relative;
+  top: 0.25rem;
+}
+
+.cloud-img {
+  opacity: 0.5;
+}
+
+.community-about-lang ul li::after{
+  content: "•";
+}
+
+.community-about-lang ul li.last-link::after {
+  content: "";
+}
