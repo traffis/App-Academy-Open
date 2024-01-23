@@ -27,35 +27,37 @@ website. Move on to the next request/response documentation.
 
 * Note
     - Headers contain many keys, but for this exercise focus on **Content-Type** and **Location**.
- 
+
 =============================================
 =============================================
 
 ### Ask for a page that doesn't exist
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method: GET
+- URL: /asdf
+- Headers: none
+- Body: none
 
 Response components:
-- Status code:
-- Headers: 
-- Body:
+- Status code: 404
+- Headers:
+  - Content-Type: text/html
+- Body: Page that says "404 - Page Not Found"
 
 ### Ask for the products list page
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method: GET
+- URL: /products
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 200
 - Headers:
-- Body: 
+ - Content-Type: text/html
+- Body: Page with products
 
 ### Ask for the product detail page
 
@@ -70,28 +72,30 @@ Here's an example product on the server:
 | categories  | "beauty", "electronics"                                    |
 
 Request components:
-- Method:
-- URL: 
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /products/:id
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 200
 - Headers:
-- Body: 
+  - Content-Type: text/html
+- Body: HTML page with details for a product
 
 ### Ask for the create new product page
 
 Request components:
-- Method:
-- URL:
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /products/new
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
-- Headers: 
-- Body: 
+- Status code: 200
+- Headers:
+  - Content-Type: text/html
+- Body: HTML page with a form to create a new product page
 
 ### Submit a new product
 
@@ -113,62 +117,83 @@ Here are the categories on the server:
 | furniture   | Furniture      |
 | clothing    | Clothing       |
 
-* Note: In Chome dev tools, if the "body" of a request exists, it will appear 
+* Note: In Chome dev tools, if the "body" of a request exists, it will appear
 in the network tab as "payload".
 
 Request components:
-- Method: 
-- URL: 
-- Headers: 
-- Body: 
+- Method: POST
+- URL: /products/:id
+- Headers:
+  - Content-Type: application/x-www-form-urlencoded
+- Body: JSON for details about the new product
+  - {
+      name: computer
+      description: a computer to visit the web
+      price: 1000.00
+      categories: electronics
+    }
 
 Response components:
-- Status code: 
+- Status code: 302
 - Headers:
-- Body: 
+  - Content-Type: text/html
+  - Location: /products/:id (/products/2)
+- Body: none
 
 ### Ask for the edit product page
 
 Request components:
-- Method: 
-- URL: 
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /products/:id/edit (/products/2/edit)
+- Headers: none
+- Body: none
 
 Response components:
-- Status code:
-- Headers: 
-- Body:
+- Status code: 200
+- Headers:
+  - Content-Type: text/html
+- Body: HTML page with a form to edit the product
 
 ### Submit an edit for an existing product
 
 After successful submission, user should be looking at the product detail page.
 
 Request components:
-- Method:
-- URL:
-- Headers: 
-- Body: 
+- Method: POST
+- URL: /products/:id (/products/2)
+- Headers:
+  - Content-Type: application/x-www-form-urlencoded
+- Body: JSON for details about the updated product
+  - {
+      name: computer
+      description: computer to go on the web and play video games
+      price: 1250
+      categories: electronics
+    }
 
 Response components:
-- Status code: 
+- Status code: 302
 - Headers:
-- Body: 
+  - Content-Type: text/html
+  - Location: /products/:id (/products/2)
+- Body: none
 
 ### Submit a delete for an existing product
 
 After successful submission, user should be looking at the products list page.
 
 Request components:
-- Method: 
-- URL:
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /products/:id/delete (/products/2/delete)
+- Headers: application/x-www-form-urlencoded
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 302
 - Headers:
-- Body: 
+  - Content-Type: text/html
+  - Location: /products/
+- Body: HTML page of products list
 
 ### Submit a new review for a product
 
@@ -184,83 +209,103 @@ Here's an example review on the server:
 | productId  | 1                      |
 
 Request components:
-- Method: 
-- URL: 
+- Method: POST
+- URL: /products/:id/reviews
 - Headers:
-- Body:
+  - Content-Type: application/x-www-form-urlencoded
+- Body: JSON with a content for the review
+  - {
+      review: great product!
+      starRating: 5
+    }
 
 Response components:
-- Status code: 
-- Headers: 
-- Body: 
+- Status code: 302
+- Headers:
+  - Content-Type: text/html
+  - Location: /products/:id/
+- Body: none
 
 ### Ask for the edit review page for a product
 
 Request components:
-- Method: 
-- URL: 
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /reviews/:id/edit
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 200
 - Headers:
-- Body: 
+  - Content-Type: text/html
+- Body: HTML page to edit the review
 
 ### Submit an edit for an existing review
 
 After successful submission, user should be looking at the product detail page.
 
 Request components:
-- Method: 
-- URL: 
+- Method: POST
+- URL: /reviews/:id
 - Headers:
-- Body: 
+  - Content-Type: application/x-www-form-urlencoded
+- Body:
+  - {
+      comment: bad product!
+      starRating: 1
+    }
 
 Response components:
-- Status code: 
-- Headers: 
-- Body:
+- Status code: 302
+- Headers:
+  - Content-Type: text/html
+  - Location: /products/:id
+- Body: none
 
 ### Submit a delete for an existing review
 
 After successful submission, user should be looking at the product detail page.
 
 Request components:
-- Method:
-- URL: 
-- Headers: 
-- Body: 
+- Method: POST
+- URL: /reviews/:id/delete
+- Headers:
+  - Content-Type: application/x-www-form-urlencoded
+- Body: none
 
 Response components:
-- Status code: 
-- Headers: 
-- Body: 
+- Status code: 302
+- Headers:
+  - Content-Type: text/html
+  - Location: /products/:id
+- Body: none
 
 ### Ask for all the products in a particular category by tag of the category
 
 Request components:
-- Method: 
-- URL: 
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /categories/:category/products
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 200
 - Headers:
-- Body: 
+  - Content-Type: text/html
+- Body: HTML page with all products from a particular category
 
 ### Ask for the best-selling product
 
 Look for clues in the HTML pages from the prior responses for what the route should be.
 
 Request components:
-- Method: 
-- URL: 
-- Headers: 
-- Body: 
+- Method: GET
+- URL: /products/best-selling
+- Headers: none
+- Body: none
 
 Response components:
-- Status code: 
+- Status code: 200
 - Headers:
-- Body: 
+  - Content-Type: text/html
+- Body: HTML page for the best-selling product
