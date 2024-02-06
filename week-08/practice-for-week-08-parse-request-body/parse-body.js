@@ -1,25 +1,43 @@
 function firstStep(input) {
-  // Your code here
+  return input.split("&");
 }
 
 function secondStep(input) {
-  // Your code here
+  return input.map(data => data.split("="));
 }
 
 function thirdStep(input) {
-  // Your code here
+  return input.map(data =>
+    [data[0].replace("+", " "), data[1].replace("+", " ")]
+  );
 }
 
 function fourthStep(input) {
-  // Your code here
+  return input.map(data =>
+    [decodeURIComponent(data[0]), decodeURIComponent(data[1])]
+  );
 }
 
 function fifthStep(input) {
-  // Your code here
+  return input.reduce((accumulator, current) => {
+    let key = current[0];
+    let value = current[1];
+
+    accumulator[key] = value;
+    return accumulator;
+  }, {});
 }
 
 function parseBody(str) {
-  // Your code here
+  if (str.length < 1) {
+    return {};
+  }
+
+  let result = firstStep(str);
+  result = secondStep(result);
+  result = thirdStep(result);
+  result = fourthStep(result);
+  return fifthStep(result);
 }
 
 /******************************************************************************/
