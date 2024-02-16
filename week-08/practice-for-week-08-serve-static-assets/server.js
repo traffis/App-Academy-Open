@@ -24,7 +24,6 @@ const server = http.createServer((req, res) => {
 
     res.statusCode = 200;
     return res.end(asset);
-
   }
 
   const htmlFile = fs.readFileSync('./index.html', 'utf-8');
